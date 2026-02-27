@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Connect to any MSSQL Server instance and run [initial script](InitialDataSchema/SchemaAndData.sql).
+1. Connect to any MSSQL Server instance and run [initial script](source/InitialDataSchema/SchemaAndData.sql).
 
 2. Specify your MSSQL Server in the Notifications API connection string.
 
