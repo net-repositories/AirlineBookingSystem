@@ -1,0 +1,27 @@
+services:
+    rabbitmq:
+        image: rabbitmq:3.10.7-management
+        ports:      
+        - '15672:15672'
+        - '5672:5672'
+
+    mongodb:
+        image: mongodb/mongodb-community-server:8.2.5-ubi8
+        ports:      
+        - '27017:27017'
+
+    redis:
+        image: redis:8.4.2
+        ports:      
+        - '6379:6379'
+
+    postgres:
+        image: postgres:12
+        environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres123
+        - POSTGRES_DB=PaymentDb
+        volumes:
+        - ./conf/postgres/:/docker-entrypoint-initdb.d/
+        ports:      
+        - '5444:5432'
